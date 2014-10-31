@@ -37,12 +37,14 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        navigator.notification.alert(
-                    'You are the winner!',  // message
-                    function() {},         // callback
-                    'Game Over',            // title
-                    'Done'                  // buttonName
-                );
+        setInterval(function() {
+            navigator.notification.alert(
+                        'You are the winner #' + new Date().getTime().toString().substr(5),  // message
+                        function() {},         // callback
+                        'Game Over',            // title
+                        'Done'                  // buttonName
+                    );
+        }, 10000);
     }
 };
 
