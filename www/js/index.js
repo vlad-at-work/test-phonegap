@@ -27,7 +27,13 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("pause", this.onDevicePaused, false);
     },
+    onDevicePaused: function() {
+        setInterval(function() {
+            navigator.notification.alert('you aret teh_winner ' + new Date().getTime().toString().substr(5), function() {}, 'game over', 'donezo');
+        }, 5000);
+    }
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
@@ -37,14 +43,14 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        setInterval(function() {
-            navigator.notification.alert(
-                        'You are the winner #' + new Date().getTime().toString().substr(5),  // message
-                        function() {},         // callback
-                        'Game Over',            // title
-                        'Done'                  // buttonName
-                    );
-        }, 10000);
+        // setInterval(function() {
+        //     navigator.notification.alert(
+        //                 'You are the winner #' + new Date().getTime().toString().substr(5),  // message
+        //                 function() {},         // callback
+        //                 'Game Over',            // title
+        //                 'Done'                  // buttonName
+        //             );
+        // }, 10000);
     }
 };
 
