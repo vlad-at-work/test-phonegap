@@ -12,6 +12,6 @@
     </description>
 
     <gap:platform name="android" />
-    <gap:plugin name="com.pushapps.phonegap" version="1.6.0" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
 
 </widget>
