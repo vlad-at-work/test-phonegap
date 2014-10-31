@@ -16,7 +16,13 @@
   <script src="js/whisp.js"></script>
 </head>
 <body>
-  <div data-role="page" data-control-title="Home" id="page1">
+  <button id="test-button"></button>
+  <script type="text/javascript">
+    $('#test-button').click(function() {
+      navigator.notification.alert('Testerello', function() {}, 'Alertie', 'Cocks');
+    });
+  </script>
+  <!-- <div data-role="page" data-control-title="Home" id="page1">
       <div data-theme="a" data-role="header">
           <a data-role="button" href="#page1" data-icon="plus" data-iconpos="notext"
           class="ui-btn-right">
@@ -138,6 +144,6 @@
               </li>
           </ul>
       </div>
-  </div>
+  </div> -->
 </body>
 </html>
